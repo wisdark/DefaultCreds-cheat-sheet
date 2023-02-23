@@ -1,5 +1,4 @@
 [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
-<a href="https://twitter.com/intent/tweet?text=DefaultCreds-cheat-sheet:%20One%20place%20for%20all%20the%20default%20credentials%20to%20assist%20the%20Blue/Red%20teamers%20activities%20on%20finding%20devices%20with%20default%20password%20%F0%9F%9B%A1%EF%B8%8F%20by%20@ih3bski%20https://github.com/ihebski/DefaultCreds-cheat-sheet"><img src="https://img.shields.io/badge/Tweet--lightgrey?logo=twitter&style=social" alt="Tweet" height="20"/></a>
 
 # Default Credentials Cheat Sheet
 
@@ -24,8 +23,8 @@
 
 |       | Product/Vendor |	Username | Password |
 | --- | --- | --- | --- |
-| **count**	| 3454	| 3454	| 3454 |
-| **unique** |	1177	| 1083 |	1599 |
+| **count**	| 3460	| 3460	| 3460 |
+| **unique** |	1182	| 1086 |	1601 |
 | **top** |	Oracle| <blank> | <blank> |
 | **freq** |	235 |	718 |	461 |
 
@@ -38,14 +37,33 @@
 - [ics-default-passwords](https://github.com/arnaudsoullie/ics-default-passwords) (thanks to @noraj)
 - Vendors documentations/blogs
 
-#### Creds script
+## Installtion
 
-You can turn the cheat sheet into a cli command and perform search queries for a specific product.
+The Default Credentials Cheat Sheet is available through [pypi](https://pypi.org/project/defaultcreds-cheat-sheet/)
+
+```bash
+$ pip3 install defaultcreds-cheat-sheet
+$ creds search tomcat
+```
+Tested on
+* Kali linux
+* Ubuntu
+
+##### Manual Installation
+
+```bash
+$ git clone https://github.com/ihebski/DefaultCreds-cheat-sheet
+$ pip3 install -r requirements.txt
+$ cp creds /usr/bin/ && chmod +x /usr/bin/creds
+$ creds search tomcat
+```
+
+#### Creds script
 
 * Usage Guide
 ```bash
 # Search for product creds
-➤ python3 creds search tomcat                                                                                                      
+➤ creds search tomcat                                                                                                      
 +----------------------------------+------------+------------+
 | Product                          |  username  |  password  |
 +----------------------------------+------------+------------+
@@ -55,13 +73,13 @@ You can turn the cheat sheet into a cli command and perform search queries for a
 +----------------------------------+------------+------------+
 
 # Update records
-➤ python3 creds update
+➤ creds update
 Check for new updates...🔍
 New updates are available 🚧
 [+] Download database...
 
 # Export Creds to files (could be used for brute force attacks)
-➤ python3 creds search tomcat export
+➤ creds search tomcat export
 +----------------------------------+------------+------------+
 | Product                          |  username  |  password  |
 +----------------------------------+------------+------------+
