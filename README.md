@@ -1,4 +1,3 @@
-[![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 # Default Credentials Cheat Sheet
 
@@ -23,10 +22,10 @@
 
 |       | Product/Vendor |	Username | Password |
 | --- | --- | --- | --- |
-| **count**	| 3460	| 3460	| 3460 |
-| **unique** |	1182	| 1086 |	1601 |
+| **count**	| 3668	| 3668	| 3668 |
+| **unique** |	1347	| 1110 |	1658 |
 | **top** |	Oracle| <blank> | <blank> |
-| **freq** |	235 |	718 |	461 |
+| **freq** |	235 |	790 |	474 |
 
 #### Sources
 
@@ -37,17 +36,21 @@
 - [ics-default-passwords](https://github.com/arnaudsoullie/ics-default-passwords) (thanks to @noraj)
 - Vendors documentations/blogs
 
-## Installtion
+## Installation & Usage
 
-The Default Credentials Cheat Sheet is available through [pypi](https://pypi.org/project/defaultcreds-cheat-sheet/)
+The Default Credentials Cheat Sheet tool is available on [pypi](https://pypi.org/project/defaultcreds-cheat-sheet/)
 
 ```bash
 $ pip3 install defaultcreds-cheat-sheet
 $ creds search tomcat
 ```
-Tested on
-* Kali linux
-* Ubuntu
+
+| Operating System   | Tested         |
+|---------------------|-------------------|
+| Linux(Kali,Ubuntu,Lubuntu)             | ✔️                |
+| Windows(10,11)               | ✔️                |
+| macOS               | ❌               |
+
 
 ##### Manual Installation
 
@@ -58,9 +61,9 @@ $ cp creds /usr/bin/ && chmod +x /usr/bin/creds
 $ creds search tomcat
 ```
 
-#### Creds script
+## Creds script
 
-* Usage Guide
+### Usage Guide
 ```bash
 # Search for product creds
 ➤ creds search tomcat                                                                                                      
@@ -90,6 +93,20 @@ New updates are available 🚧
 
 [+] Creds saved to /tmp/tomcat-usernames.txt , /tmp/tomcat-passwords.txt 📥
 ```
+
+**Run creds through proxy**
+```bash
+# Search for product creds
+➤ creds search tomcat --proxy=http://localhost:8080
+
+# update records
+➤ creds update --proxy=http://localhost:8080
+
+# Search for Tomcat creds and export results to /tmp/tomcat-usernames.txt , /tmp/tomcat-passwords.txt
+➤ creds search tomcat --proxy=http://localhost:8080 export
+```
+
+> **Proxy option** is only available from version 0.5.2
   
 [![asciicast](https://asciinema.org/a/526599.svg)](https://asciinema.org/a/526599)
   
